@@ -43,7 +43,7 @@ A-frameを用いて, 3D感覚のゲームを実装したかったが, なぜかA
 
 [拳銃自殺用の顔](https://www.pakutaso.com/20140635164post-4236.html)
 
-[backgroundBlur.js](https://github.com/msurguy/background-blur)
+[backgroundBlur.js(このgithubでは使用してないけど)](https://github.com/msurguy/background-blur)
 
 [銃声](http://www.kurage-kosho.info/mp3/gun-fire05.mp3)
 
