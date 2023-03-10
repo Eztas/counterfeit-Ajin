@@ -21,7 +21,7 @@ const blood_pool = document.getElementById("blood_layer");
 // 1マガジンにある最大の弾数, 最初だけ21という良心(?)設計
 const MAX_BULLET_NUM = 21;
 // 追加でわきでてくる最大のSATの人数
-const MAX_SAT_NUM = 50;
+const MAX_SAT_NUM = 100;
 
 // let
 
@@ -31,6 +31,8 @@ let period_sat_motion = 600;
 let period_sat_appearance = 1700;
 // 麻酔銃を撃たれてから寝るまでの時間
 let period_my_sleepness = 1400;
+// SATが動く横範囲(縦画面での操作が理想なので, スマホ版は横移動範囲を狭める)
+let sat_width_of_moving = 340;
 
 // global variable
 
@@ -55,20 +57,22 @@ var bullet_num = 20;
 function Mobile_or_PC_environment() {
     var md = new MobileDetect(window.navigator.userAgent);
     if(md.mobile()){
-        period_sat_motion = 450;
-        period_sat_appearance = 1500;
-        period_my_sleepness = 1150;
+        period_sat_motion = 500;
+        period_sat_appearance = 1600;
+        period_my_sleepness = 1200;
+        sat_width_of_moving = 300;
     }else{
         period_sat_motion = 600;
         period_sat_appearance = 1700;
         period_my_sleepness = 1400;
+        sat_width_of_moving = 340;
     }
 }
 
 // SATをsetIntervalで非同期で動かす. 死んでいれば血を非表示, 一定時間以上動けば麻酔銃を撃つ(必中なのが問題)
 function move_SAT(number_of_sat){
     setInterval(    function (){
-        (document.getElementById(number_of_sat)).style.left = 320 * Math.random(); // ランダムな横移動
+        (document.getElementById(number_of_sat)).style.left = sat_width_of_moving * Math.random(); // ランダムな横移動
         (document.getElementById(number_of_sat)).style.top = 50 + 250 * Math.random(); // ランダムな縦移動
         if((document.getElementById(number_of_sat).src).indexOf("blood.png") > -1){ // SATが血である, つまり死んでるならその血の表示を消す.
             (document.getElementById(number_of_sat)).style.display = "none";
@@ -192,7 +196,7 @@ function move_IBM(){
     document.getElementById('imvisible_black_matter').style.display = "inline";
     
     ibm_timer_id = setInterval(    function (){
-        (document.getElementById('imvisible_black_matter')).style.left = 320 * Math.random();
+        (document.getElementById('imvisible_black_matter')).style.left = sat_width_of_moving * Math.random();
         (document.getElementById('imvisible_black_matter')).style.top = 50 + 250 * Math.random();
         ibm_collapse++;
         if(ibm_collapse == 8){
