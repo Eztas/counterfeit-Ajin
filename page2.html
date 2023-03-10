@@ -1,0 +1,34 @@
+<head>
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link rel="stylesheet" href="css/battlefield.css">
+    <script type="text/javascript" src="javascript/battle.js" defer></script>
+    <script type="text/javascript" src="javascript/open_twitter.js" defer></script>
+    <script type="text/javascript" src="javascript/mobile-detect.js" defer></script>
+    <span id="rest_bullet" onload="reload_bullet()">20</span>
+    <span id="kill_point">0</span>
+    <audio id="kill_audio">
+        <source src="audio/Uwa.wav">
+    </audio>
+    <audio id="gun_audio">
+        <source src="audio/gunmusic.mp3">
+    </audio>
+    <audio id="no_gun_audio">
+        <source src="audio/no_gun.mp3">
+    </audio>
+    <audio id="tranquilizer_gun_audio">
+        <source src="audio/masuiju.mp3">
+    </audio>
+</head>
+
+<body>
+    <div id="blood_layer"></div>
+    <div id="sat_team">
+        <img id="sat1" src="img/SAT.png" width="75" height="100" onload="move_SAT(this.id)" onclick="kill_SAT(this.id)">
+        <img id="imvisible_black_matter" src="img/ibm.png" width="75" height="100" style="display: none">
+    </div>
+    <div id="on_my_hand">
+        <input id="reload_magnum" type="image" src="img/gun.jpg" width="50" height="50">
+        <input id="create_ibm" type="image" src="img/ibm.png" width="50" height="50" onclick="move_IBM()">
+        <input id="suicide_reset" type="image" src="img/suicide_face.jpg" width="50" height="50" style="display: none"> <!--onclick="suicide_me()" -->
+    </div>
+</body>

@@ -1,0 +1,65 @@
+<link rel="stylesheet" href="css/accordion_tab.css">
+<h1>ヘルプ</h1>
+<div class="tab-wrap">
+  <input id="TAB-01" type="radio" name="TAB" class="tab-switch" checked="checked" />
+  <label class="tab-label" for="TAB-01">初期画面における説明</label>
+  <div class="tab-content">
+    <p>PLAYボタンを押せば遊べます。(どのゲームでも)</p>
+    <p>
+        「vsSATforG」にあるテキストボックスに文字列を入力すれば,
+        それをユーザーネームとして「vsSATforG」のゲームをプレイできます。
+    </p>
+    <details class="accordion-001">
+      <summary>forGとforTの違い</summary>
+      <p>ゲームの内容は共に全く同じですが、最後の演出が少し違います。遊べば分かります。</p>
+    </details>
+  </div>
+  
+  <input id="TAB-02" type="radio" name="TAB" class="tab-switch" />
+  <label class="tab-label" for="TAB-02">設定</label>
+  <div class="tab-content">
+    <p>動き回り, 増え続けるSAT隊員を殺し続けて, ポイントを稼ぐこと。</p>
+  </div>
+
+  <input id="TAB-03" type="radio" name="TAB" class="tab-switch" />
+  <label class="tab-label" for="TAB-03">各ギミックについて</label>
+  <div class="tab-content">
+
+    <details class="accordion-001">
+      <summary>上の数字</summary>
+      <p>左上にある緑色の数字は現在発砲できる銃弾の数です。</p>
+      <p>その右にある赤色の数字は、殺したSAT隊員の数, ポイントです。</p>
+    </details>
+
+    <details class="accordion-001">
+      <summary>下のボタン</summary>
+      <span>ゲーム画面の左にあるボタンを押すとリロードができます。</span>
+      <img src="img/gun.jpg" width="50" height="50">
+      <br>
+      <span>ゲーム画面の真ん中にあるボタンを押すとIBMが出現して、あなたを助けてくれます。</span>
+      <img src="img/ibm.png" width="50" height="50">
+      <br>
+      <span>ゲーム画面の急に現れる右にあるボタンを押すと、自殺してリセットできます。</span>
+      <img src="img/suicide_face.jpg" width="50" height="50">
+    </details>
+
+  </div>
+
+  <input id="TAB-04" type="radio" name="TAB" class="tab-switch" />
+  <label class="tab-label" for="TAB-04">詳細</label>
+  <div class="tab-content">
+    <p>銃は20(時価)発まで持てますので, なくなったら左下の銃のボタンでリロードしましょう。</p>
+    <p>しばらくの間SAT隊員(の画像)を攻撃できないと, 麻酔銃を撃たれてあなたは眠らされてしまいます。</p>
+    <p>そうなると右下に拳銃を口に入れて自殺しようとしている人の顔が出現します。</p>
+    <p>それを押すと自殺に成功し, 復活できます。</p>
+    <p>銃弾が0発だと自殺できないので、適度にリロードしておきましょう。</p>
+    <p>真ん中にあるボタンを押すと, 1度だけ「IBM」(詳しい説明は漫画「亜人」を読んでください)という物体を生成できます。</p>
+    <p>この物体は近くにいるSATを無差別に殺してくれるので、あなたがキル数を稼ぐのに役立つでしょう。</p>
+    <p>しかし、一度だけしか呼び出せないので、使うタイミングは慎重に選びましょう。</p>
+    <p>時間以内に自殺できなければあなたは眠ることになり,ゲームオーバーとなります。</p>
+    <p>自分がそこまで行ったことがないため本当にそうなるか分かりませんが、32766か32767人のSATを倒すとクリアです。</p>
+    <p>ゲームオーバーになると, 最後に何キルしたか分かります。</p>
+  </div>
+</div>
+
+<a href="index.html">最初の画面に戻る</a>
