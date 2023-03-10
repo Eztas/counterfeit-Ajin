@@ -1,0 +1,82 @@
+
+/* index.htmlページ */
+body{
+    background-color: #a2a097;
+    margin: 0;
+    -webkit-text-size-adjust: 100%;/*width=device-width=幅をデバイスごとに調整, initial-scale=1.0=縦横変換で余計な拡大をなくす。また左ので余計な文字拡大をなくす。*/
+}
+.top {
+    background-color: #eee;
+    height: 200px;
+    margin-bottom: 20px;
+  }
+  
+  h1 {
+    text-align: center;
+    line-height: 200px;
+  }
+  
+  .top_txt {
+    text-align: center;
+  }
+  
+  .container {
+    margin: 20px auto;
+    max-width: 1080px;
+  }
+  
+  .content_item {
+    display: flex;
+    justify-content: center;
+    padding: 20px 0;
+    border-bottom: 1px solid #eee;
+    border-top: 1px solid #eee;
+  }
+  
+  .content_item img {
+    width: 350px;
+    height: auto;
+  }
+  
+  .content_txt {
+    padding: 10px 0 0 20px;
+  }
+  
+  .content_txt p {
+    max-width: 500px;
+    padding: 10px 0;
+  }
+  
+  .more_btn {
+    background-color: rgb(199, 197, 197);
+    display: inline-block;
+    padding: 15px;
+    border-radius: 10px;
+    margin-top: 20px;
+  }
+  
+  .more_btn a {
+    color: #fff;
+    font-weight: bold;
+  }
+  
+  
+  /* page_1.html,page_2.html,page_3.htmlページ */
+  .page_content {
+    text-align: center;
+  }
+  
+  .page_content h2,.page_content img,.content_inner {
+    padding: 10px 0;
+  }
+  
+  .page_content img {
+    width: 500px;
+    height: auto;
+  }
+  
+  .content_inner {
+    max-width: 600px;
+    text-align: left;
+    margin: 0 auto;
+  }
