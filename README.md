@@ -33,6 +33,10 @@ page1にて個人的に思い描いてたものが完成できた(言語の仕�
 
 A-frameを用いて, 3D感覚のゲームを実装したかったが, なぜかA-frameが全く使えなかったので, 使えた人は教えてください.
 
+反省点
+
+ローカルでやってた時には分からなかったが, インターネット経由でやると動作が重いかもしれない
+
 # reference
 
 [戦場](https://www.wallpaperbetter.com/ja/hd-wallpaper-zojqh)
