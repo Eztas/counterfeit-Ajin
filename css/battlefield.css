@@ -53,19 +53,19 @@ body > #on_my_hand{
 #reload_magnum {
     position: relative;
     /*top: 300px;*/
-    left:75px;
+    left:25px;
 }
 
 #create_ibm {
     position: relative;
     /*top: 300px;*/
-    left:150px;
+    left:100px;
 }
 
 #suicide_reset {
     position: relative;
     /*top: 300px;*/
-    left:225px;
+    left:175px;
 }
 
 .hide{
