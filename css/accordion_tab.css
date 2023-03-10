@@ -1,0 +1,89 @@
+body{
+  background-color: black;
+}
+h1{
+  color:white
+}
+
+/* tab in a page */
+.tab-wrap {
+  display: flex; /*直下の要素がを横に並列*/
+  flex-wrap: wrap; /*コンテナからあふれそうになると自動改行*/
+}
+.tab-label {
+  color: White;
+  background: LightGray;
+  margin-right: 5px;
+  padding: 3px 12px;
+  order:-1;
+}
+.tab-content {
+  width: 100%;
+  display: none;
+  color: blue;
+}
+.tab-switch:checked+.tab-label {
+  background: red;
+}
+.tab-switch:checked+.tab-label+.tab-content {
+  display: block;
+}
+.tab-switch {
+  display: none;
+}
+
+/* accordion box */
+.accordion-001 {
+    max-width: 640px;
+    background-color: black;
+}
+
+.accordion-001:not([open]) {
+    margin-bottom: 7px;
+}
+
+.accordion-001 summary {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    padding: 1em 2em;
+    border-radius: 5px;
+    background-color: #cc7b7b;
+    color: #fff;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.accordion-001 summary::-webkit-details-marker {
+    display: none;
+}
+
+.accordion-001 summary::after {
+    transform: translateY(-25%) rotate(45deg);
+    width: 7px;
+    height: 7px;
+    margin-left: 10px;
+    border-bottom: 3px solid #fff;
+    border-right: 3px solid #fff;
+    content: '';
+    transition: transform .3s;
+}
+
+.accordion-001[open] summary::after {
+    transform: rotate(225deg);
+}
+
+.accordion-001 p {
+    transform: translateY(-10px);
+    opacity: 0;
+    margin: 0;
+    padding: 1em 2em 2em 2em;
+    color: blue;
+    transition: transform .5s, opacity .5s;
+}
+
+.accordion-001[open] p {
+    transform: none;
+    opacity: 1;
+}

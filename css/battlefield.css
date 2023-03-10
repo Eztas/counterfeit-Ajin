@@ -1,0 +1,81 @@
+#rest_bullet{
+    color: #00ff00;
+}
+
+#kill_point{
+    color: #ff3333;
+}
+
+body{
+    background-image:
+        radial-gradient(#a49f9f, transparent),
+        radial-gradient(#000000, transparent),
+        radial-gradient(#323131, transparent);
+    background-attachment: fixed;
+}
+
+body > #sat_team{
+    background-image: url("../img/field.jpg");
+    background-repeat: no-repeat;
+    /*object-fit: cover;*/
+    width : 90%;
+    height : 90%;
+}
+
+body > #on_my_hand{
+    position: absolute;
+    top: 470px;
+}
+
+#blood_layer {
+    position:absolute;
+    /*top:50px;*/
+    top: 30px;
+    left:0px;
+  
+    width:735px;
+    height:410px;
+
+    opacity:0;
+    z-index: index auto; /*これせんと上手くいかなかった気もする*/
+    visibility:hidden;
+    background-color:#f00000;
+}
+
+#sat1 {
+    position: absolute;
+}
+
+#imvisible_black_matter {
+    position: absolute;
+}
+
+#reload_magnum {
+    position: relative;
+    /*top: 300px;*/
+    left:75px;
+}
+
+#create_ibm {
+    position: relative;
+    /*top: 300px;*/
+    left:150px;
+}
+
+#suicide_reset {
+    position: relative;
+    /*top: 300px;*/
+    left:225px;
+}
+
+.hide{
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.8s;
+}
+
+.show{ /*使いたかったけど使ってない*/
+    opacity: 1;
+    visibility: visible;
+    transition: 0.4s;
+}
