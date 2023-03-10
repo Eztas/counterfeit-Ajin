@@ -1,11 +1,12 @@
-<!-- HTMLコード -->
-<!-- index.html -->
+<!-- HTML -->
+<!-- idが1度だけ, classが何度でも使える -->
+
 <!DOCTYPE HTML>
 <html lang="ja">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, maximum-scale=1, user-scalable=no">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
     <div class="top">
@@ -14,25 +15,54 @@
     <p class="top_txt">TOP</p>
   
     <div class="container">
-        <!-- ブログ1 -->
-        <div class="content_item">
-          <img src="img/img1.jpg">
-          <div class="content_txt">
-            <h2>vsSAT</h2>
-            <div class="more_btn">
-                <a href="page1.html">PLAY</a>
-            </div>
-          </div>
-        </div>
         <div class="content_item">
             <img src="img/test_img.jpg">
             <div class="content_txt">
-              <h2>説明(ざっくり)</h2>
+              <h2>ヘルプ</h2>
                 <div class="more_btn">
-                    <a href="page2.html">READ</a>
+                    <a href="page0.html">READ</a>
                 </div>
             </div>
         </div>
+
+        <div class="content_item">
+          <img src="img/field.jpg" loading="lazy">
+          <div class="content_txt">
+            <h2>vsSAT forG</h2>
+            <input id="username" type="text" value="unknown">
+            <div class="more_btn" id="play_button">
+              <span>PLAY</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="content_item">
+          <img src="img/field.jpg" loading="lazy">
+          <div class="content_txt">
+            <h2>vsSAT forT</h2>
+            <div class="more_btn">
+                <a href="page2.html">PLAY</a>
+            </div>
+          </div>
+        </div>
+       
+        <div class="content_item">
+          <img src="img/field.jpg" loading="lazy">
+          <div class="content_txt">
+            <h2>Coming Soon</h2>
+            <div class="more_btn">
+                <!--<a href="g.html"></a>-->
+                PLAY
+            </div>
+          </div>
+       </div>
+
     </div>
 </body>
+<script>
+  document.getElementById("play_button").addEventListener("click", function() {
+    var username = document.getElementById("username").value;
+    window.location.href = "page1.html?username=" + encodeURIComponent(username);
+  });
+</script>
 </html>  
