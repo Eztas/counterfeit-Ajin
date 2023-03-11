@@ -20,6 +20,7 @@ body > #sat_team{
     /*object-fit: cover;*/
     width : 90%;
     height : 90%;
+    touch-action: none; /*役立つか不明*/
 }
 
 body > #on_my_hand{
