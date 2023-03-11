@@ -14,9 +14,10 @@ body{
 .c-form__label {
 	color: gold;
 }
+/*数字のスコアの影が思ったより雑魚い*/
 .c-form__result{
 	font-size: 25px;
-	text-shadow: 0 0 30px #ffffff, 0 0 30px #ffffff; /*X、Y、ぼかし、色*/
+	text-shadow: 1px 1px 2px white, 0 0 1em white, 0 0 0.2em white; /*X、Y、ぼかし、色*/
 	/*2種類ないとなぜか上手くいかない, 意味が分からん*/
 }
 .c-form__input, .c-form__submit{
@@ -29,6 +30,6 @@ body{
 		flex-wrap: nowrap;
 	}
 	.c-form__label {
-		width: 40%;
+		width: 70%;
 	}
 }
