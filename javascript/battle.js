@@ -7,6 +7,11 @@
 // 本来360度方向から狙撃が来るので, その要素も加わるとより面白くなりそう
 // この課題はunityでの実装時に補う(JavaScriptじゃかなりきつい), 企業からのバックアップがほしい
 
+// javascriptでgoogle formのURLをいじることで, 値を入力した状態のgoogle form画面へ遷移する.
+// で, それをスプレッドシートに送ればいい. html->gform->spreadsheetで行う.
+// GAS使うのも考えたが, これと資源競合できるのかよく分からないので, 一旦やめる
+// テキストボックスではなく, ラベルの値を取得できないか?
+
 // constant
 
 // 元となるsat1のクローン, これによりonloadイベントにおける関数などを逐一呼び出さなくても使用できる.
@@ -167,19 +172,22 @@ function upgrade_kill_num() {
 
 // 血のような赤いフィルターをかけることで, 戦場に血が増えた雰囲気(だけ)を演出
 function dead_blood(){
+    // blood_red = 255;
+    // 元々30キル位で赤みがカンストするけど, 流石に速すぎた
     blood_pool.style.visibility = "visible";
     blood_pool.style.opacity = 0.2;
 
-    if(blood_red > 16){
-        blood_red = blood_red - 16;
+    if(blood_red > 0){
+        blood_red = blood_red - 5;
         blood_pool.style.backgroundColor = "rgb(255," + blood_red + "," + blood_red  + ")";
     }
-    else if(blood_red > -255 && blood_red < 16){
-        blood_red = blood_red - 15;
+    else if(blood_red >= -255 && blood_red <= 0){
+        blood_red = blood_red - 5;
         blood_pool.style.backgroundColor = "rgb(" + (255+blood_red) + ", 0, 0)";
     }
     else{
-        blood_pool.style.backgroundColor = "rgb(255," + blood_red + "," + blood_red  + ")";
+        // 赤にしてたけど, 黒でもいいかも
+        //blood_pool.style.backgroundColor = "rgb(255," + blood_red + "," + blood_red  + ")";
     }
 }
 
