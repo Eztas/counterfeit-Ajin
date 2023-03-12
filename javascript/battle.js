@@ -120,7 +120,7 @@ function sleep_me(){
 function kill_SAT(number_of_sat) {
     if(bullet_num > 0 || document.getElementById('imvisible_black_matter').style.display == "inline"){ // 裏技として, IBMを出してるときは弾がなくてもSATを殺せる.
         audio_bark();
-        exist_time = exist_time - 4; // こうしないと復活した直後にまた麻酔銃撃たれるとかになる
+        exist_time = exist_time - 5; // こうしないと復活した直後にまた麻酔銃撃たれるとかになる
         document.getElementById(number_of_sat).src = "img/blood.png"; // 殺す=血の画像に変更する.
         upgrade_kill_num();
     }
