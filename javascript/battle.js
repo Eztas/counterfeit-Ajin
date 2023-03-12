@@ -7,11 +7,6 @@
 // 本来360度方向から狙撃が来るので, その要素も加わるとより面白くなりそう
 // この課題はunityでの実装時に補う(JavaScriptじゃかなりきつい), 企業からのバックアップがほしい
 
-// javascriptでgoogle formのURLをいじることで, 値を入力した状態のgoogle form画面へ遷移する.
-// で, それをスプレッドシートに送ればいい. html->gform->spreadsheetで行う.
-// GAS使うのも考えたが, これと資源競合できるのかよく分からないので, 一旦やめる
-// テキストボックスではなく, ラベルの値を取得できないか?
-
 // constant
 
 // 元となるsat1のクローン, これによりonloadイベントにおける関数などを逐一呼び出さなくても使用できる.
@@ -111,7 +106,6 @@ function sleep_me(){
 
     timeout_id = setTimeout(() => {
         open_other_window(kill_sat_num); // google form or twitter
-       //open_report_Twitter("I killed " + String(kill_sat_num) + "." ,"https://eztas.github.io/","Ajin","anime_ajin");
     }, period_my_sleepness);
     document.getElementById('suicide_reset').addEventListener('click', () => {
         if(bullet_num > 0){
@@ -227,6 +221,10 @@ function ibm_to_sat_check(elm_ibm, elm_sat) {
     ); // 座標が一致したらIBMがSATを確殺
 }
 
+function cancel_action(){
+
+}
+
 // Twitter自動で開いて報告
 /*function open_report_Twitter(text,url,hash,account) {
     window.location.href = "https://twitter.com/intent/tweet?text="+text+"&url="+url+"&hashtags="+hash+"&via="+account;
@@ -267,3 +265,11 @@ add_sat_timer = setInterval(    function (){
 // Webサイトのどこでもクリックしたら銃弾が減る
 document.addEventListener('click', audio_gun, false);
 
+// ダブルタップと2本指以上の操作におけるズーム禁止, かつ1人に対して2キルが取れる
+document.addEventListener("dblclick", function(e){ e.preventDefault();}, { passive: false });
+
+document.body.addEventListener('touchmove', (e) => {
+    if (e.touches.length > 1) {
+      e.preventDefault();
+    }
+}, {passive: false});
