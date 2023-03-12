@@ -1,6 +1,6 @@
 // counterfeit-Ajin
 // 今後の発展と課題
-// document.getElementById('sat_team').classList.toggle('hide')を使って, 視界悪化と視界明瞭を再現したかったが, 絶対に殺せないのに相手に一方的に撃たれる状況になるのでやめた
+// classList.toggle('hide')を使いたかった(私利私欲)
 // 移動ボタンを使って, 実際の回避動作を再現するか検討中(こっちのページではいいかな, 別ページで実装)
 // 自殺の方法が雑
 // 想定が佐藤vs研究員の戦闘シーン(戦ってるのSATだけど)なので, フォージ戦などの戦略までもは反映できない悲しみ
@@ -35,7 +35,7 @@ let sat_width_of_moving = 340;
 var exist_time = 0;
 // 殺したSAT隊員の数, 最終的なスコアになる.
 var kill_sat_num = 0;
-// 今までに出現したSATの数, 上限は32767(予定), id番号の代わりにもなる.
+// 今までに出現したSATの数, id番号の代わりにもなる.
 var sat_num_in_team = 1;
 // ここに新たなSATを生成するたびに, その要素を格納する.
 var sat_element;
@@ -91,6 +91,7 @@ function move_SAT(number_of_sat){
 
 // 自殺して麻酔を消す.
 function suicide_me(){
+    document.getElementById('sat_team').classList.remove('asleep'); // 起こす
     document.getElementById('gun_audio').currentTime = 0;
     document.getElementById('gun_audio').play();
     document.getElementById('suicide_reset').style.display = "none";
@@ -100,7 +101,7 @@ function suicide_me(){
 // 麻酔銃を撃たれると, 一定時間以内に自殺できなければプレイヤーは眠らされる.
 function sleep_me(){
     let timeout_id = null;
-
+    document.getElementById('sat_team').classList.add('asleep'); // 眠る
     document.getElementById('suicide_reset').style.display = "inline"; // 眠ると自殺ボタンが出現して, 自殺の準備を始める.
     audio_tranquilizer_gun();
 
@@ -194,7 +195,7 @@ function move_IBM(){
         (document.getElementById('imvisible_black_matter')).style.top = 50 + 250 * Math.random();
         ibm_collapse++;
         if(ibm_collapse == 8){
-            document.getElementById('imvisible_black_matter').classList.toggle('hide'); // 途中から姿を隠させて, 消滅してる感を演出
+            document.getElementById('imvisible_black_matter').setAttribute('class', 'hide'); // 途中から姿を隠させて, 消滅してる感を演出
         }
         else if(ibm_collapse > 9){
             document.getElementById('create_ibm').style.display = "none";
@@ -236,8 +237,7 @@ add_sat_timer = setInterval(    function (){
         sat_element.style.display = "inline";
         sat_element.src = "img/SAT.png"; // たまにsat1が血の画像になっていることがあり, それが複製される場合があるので, SAT画像を貼り直す.
     }
-    else{ // あれ? MAXこえても普通にゲーム続くんだが?
-        //open_report_Twitter("Congratulations. I killed all sat member of " + String(kill_sat_num) + "." ,"http://www.ajin.net/","Ajin","anime_ajin");
+    else{
         open_other_window("all member, " + kill_sat_num);
     }
 }, period_sat_appearance);
@@ -245,10 +245,10 @@ add_sat_timer = setInterval(    function (){
 // Webサイトのどこでもクリックしたら銃弾が減る
 document.addEventListener('click', audio_gun, false);
 
-// ダブルタップと2本指以上の操作におけるズーム禁止, かつ1人に対して2キルが取れる
+// ダブルタップにおけるズーム禁止, かつ1人に対して2キルが取れることも禁止
 document.addEventListener("dblclick", function(e){ e.preventDefault();}, { passive: false });
 
-// 2本指以上の操作を禁止にしたことで, 下手したらスマホ環境くそ説ある
+// 2本指以上の操作を禁止にしたことで, 下手したらスマホ環境雑魚説ある
 document.body.addEventListener('touchmove', (e) => {
     if (e.touches.length > 1) {
       e.preventDefault();
