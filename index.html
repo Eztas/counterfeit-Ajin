@@ -1,5 +1,6 @@
 <!-- HTML -->
 <!-- idが1度だけ, classが何度でも使える -->
+<!-- localStorageを利用すれば, こっちで管理できるのでは?-->
 
 <!DOCTYPE HTML>
 <html lang="ja">
@@ -57,6 +58,8 @@
     </div>
 </body>
 <script>
+  document.getElementById("username").value = Math.random().toString(36).slice(-8); // 名前の乱数
+  
   document.getElementById("play_button").addEventListener("click", function() {
     var username = document.getElementById("username").value;
     window.location.href = "page1.html?username=" + encodeURIComponent(username);
