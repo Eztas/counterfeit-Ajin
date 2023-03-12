@@ -1,4 +1,4 @@
-// demi-Ajin, counterfeit-Ajin
+// counterfeit-Ajin
 // 今後の発展と課題
 // document.getElementById('sat_team').classList.toggle('hide')を使って, 視界悪化と視界明瞭を再現したかったが, 絶対に殺せないのに相手に一方的に撃たれる状況になるのでやめた
 // 移動ボタンを使って, 実際の回避動作を再現するか検討中(こっちのページではいいかな, 別ページで実装)
@@ -166,22 +166,19 @@ function upgrade_kill_num() {
 
 // 血のような赤いフィルターをかけることで, 戦場に血が増えた雰囲気(だけ)を演出
 function dead_blood(){
-    // blood_red = 255;
-    // 元々30キル位で赤みがカンストするけど, 流石に速すぎた
     blood_pool.style.visibility = "visible";
     blood_pool.style.opacity = 0.2;
 
     if(blood_red > 0){
-        blood_red = blood_red - 5;
+        blood_red = blood_red - 9;
         blood_pool.style.backgroundColor = "rgb(255," + blood_red + "," + blood_red  + ")";
     }
     else if(blood_red >= -255 && blood_red <= 0){
-        blood_red = blood_red - 5;
+        blood_red = blood_red - 9;
         blood_pool.style.backgroundColor = "rgb(" + (255+blood_red) + ", 0, 0)";
     }
     else{
-        // 赤にしてたけど, 黒でもいいかも
-        //blood_pool.style.backgroundColor = "rgb(255," + blood_red + "," + blood_red  + ")";
+        blood_pool.style.backgroundColor = "rgb(255," + blood_red + "," + blood_red  + ")";
     }
 }
 
@@ -251,6 +248,7 @@ document.addEventListener('click', audio_gun, false);
 // ダブルタップと2本指以上の操作におけるズーム禁止, かつ1人に対して2キルが取れる
 document.addEventListener("dblclick", function(e){ e.preventDefault();}, { passive: false });
 
+// 2本指以上の操作を禁止にしたことで, 下手したらスマホ環境くそ説ある
 document.body.addEventListener('touchmove', (e) => {
     if (e.touches.length > 1) {
       e.preventDefault();
