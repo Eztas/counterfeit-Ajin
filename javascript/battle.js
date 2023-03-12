@@ -221,23 +221,6 @@ function ibm_to_sat_check(elm_ibm, elm_sat) {
     ); // 座標が一致したらIBMがSATを確殺
 }
 
-function cancel_action(){
-
-}
-
-// Twitter自動で開いて報告
-/*function open_report_Twitter(text,url,hash,account) {
-    window.location.href = "https://twitter.com/intent/tweet?text="+text+"&url="+url+"&hashtags="+hash+"&via="+account;
-    //document.write(text); // Twitterに飛ぶのがうざいとき
-}*/
-
-// googleformに自動遷移, リンク先のスプレッドシートに報告
-/*
-function open_google_form(score_to_kill_sat) {
-    window.location.href = "https://docs.google.com/forms/d/e/1FAIpQLSeaUJsa97gQH_0_p8pcYm-X1xLHP6rDbfz-PIIN5u3ZCO-S5Q/viewform?usp=pp_url&entry.1190567327="+score_to_kill_sat;
-}
-*/
-
 // called function
 
 // 読み込み時にモバイル版かPC版なのかを判定, 俺個人の感想としてモバイルでやる方がダントツで簡単なので, モバイルは時間設定などを多少難しくする.
