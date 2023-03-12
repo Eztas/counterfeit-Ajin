@@ -39,6 +39,12 @@ A-frameを用いて, 3D感覚のゲームを実装したかったが, なぜかA
 
 # reference
 
+[SAT](https://www.irasutoya.com/2015/06/blog-post_856.html)
+
+[血しぶき](https://orangestar.hatenadiary.jp/entry/2015/06/18/190000)
+
+[SATの断末魔](https://soundeffect-lab.info/sound/voice/game.html) 
+
 [戦場](https://www.wallpaperbetter.com/ja/hd-wallpaper-zojqh)
 
 [銃](https://publicdomainq.net/pistol-hand-gun-0021061/)
