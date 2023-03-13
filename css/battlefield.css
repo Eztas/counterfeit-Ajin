@@ -14,16 +14,15 @@ body{
     background-attachment: fixed;
 }
 
-body > #sat_team{
+#sat_team{
     background-image: url("../img/field.jpg");
     background-repeat: no-repeat;
     /*object-fit: cover;*/
     width : 90%;
     height : 90%;
-    touch-action: none; /*役立つか不明*/
 }
 
-body > #on_my_hand{
+#on_my_hand{
     position: absolute;
     top: 470px;
 }
@@ -75,8 +74,7 @@ body > #on_my_hand{
     transition: 0.8s;
 }
 
-.show{ /*使いたかったけど使ってない*/
-    opacity: 1;
-    visibility: visible;
-    transition: 0.4s;
+.asleep{
+    filter: brightness(10%);
+    transition: 2.0s;
 }
