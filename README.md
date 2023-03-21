@@ -42,6 +42,8 @@ A-frameを用いて, 3D感覚のゲームを実装したかったが, なぜかA
 あれから色々調べていると, https://game-ac.com/free/gunshooting/fps/ や [enchant.js](https://github.com/ghelia/enchant.js-builds)
 等も見つけたので, より可能性が見え始めてきた.
 
+めんどくさくなった(というかかなりきつそうだった)ので, また今度やります(3/21)
+
 # reference
 
 [SAT](https://www.irasutoya.com/2015/06/blog-post_856.html)
