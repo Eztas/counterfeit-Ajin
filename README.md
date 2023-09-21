@@ -1,5 +1,7 @@
 # counterfeit-Ajin
 
+https://eztas.github.io/counterfeit-Ajin
+
 亜人のゲームを調べても, まともなやつが[人狼](https://gigazine.net/news/20161027-ajinrou-review/)くらいしか見つからなかったので, 自力でhtmlとcss, javascript, jQuery(使いそうで使わなかったけど)を用いて作れる範囲で作った(2023年3月13日時点で収益化, 商用化する予定はなし).
 
 今回までの前身としてC++, C#で実装したものが存在し, Unityでも作ろうとしたが, あまりにも分からないので断念.
