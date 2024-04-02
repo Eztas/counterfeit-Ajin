@@ -1,5 +1,7 @@
 # counterfeit-Ajin
 
+https://eztas.github.io/counterfeit-Ajin/index.html
+
 亜人のゲームを調べても, [人狼](https://gigazine.net/news/20161027-ajinrou-review/)くらいしか見つからなかったので, 自力でhtmlとcss, javascriptを用いて作れる範囲で作った(2023年3月13日時点で収益化, 商用化する予定はなし).
 
 亜人の戦闘において一番重要である, 「自殺して全快すること」を再現した実装内容がボタンを押すだけの簡素なものになってしまったことが心残りである
